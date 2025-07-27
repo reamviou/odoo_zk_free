@@ -88,8 +88,7 @@ class VitouzkDownloadAtt(models.TransientModel):
 
      def action_download_attendance(self):
           """Function to download attendance records from the device"""
-          # if (self.lic_check()):
-          self.env[func_mod].is_my_saft()
+
           zk_attendance = self.env['vitouzkf.attendance.all']
           hr_attendance = self.env['hr.attendance']
           for info in self:

@@ -40,7 +40,7 @@ class VitouzkDownloadAttFlexible(models.TransientModel):
 
     def action_open_report(self):
         """Button action for creating Sale Order Pdf Report"""
-        self.env[func_mod].is_my_saft()
+
         data_get = self.get_data()
         data = {
             'data': data_get

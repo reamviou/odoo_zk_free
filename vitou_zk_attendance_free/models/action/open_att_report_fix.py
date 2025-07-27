@@ -39,7 +39,7 @@ class VitouzkDownloadAtt(models.TransientModel):
     # date_to = fields.Date(string="Date To", default=fields.Date.today())
 
     def action_open_report(self):
-        self.env[func_mod].is_my_saft()
+
         """Button action for creating Sale Order Pdf Report"""
         data_get = self.get_data()
         data = {

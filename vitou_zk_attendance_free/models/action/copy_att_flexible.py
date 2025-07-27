@@ -47,7 +47,7 @@ class VitouzkActionCopyAtt(models.TransientModel):
 
      def action_copy(self):
           # print('donwload...')
-          self.env[func_mod].is_my_saft()
+
           att_mod = self.env['vitouzkf.attendance.all.flexible']
           hr_mod = self.env['hr.attendance']
           for rec in self:
