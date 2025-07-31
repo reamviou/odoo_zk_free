@@ -214,7 +214,7 @@ class BiometricDeviceDetails(models.Model):
 
     def action_download_attendance(self):
         """Function to download attendance records from the device"""
-        # if (self.lic_check()):
+
         zk_attendance = self.env['vitouzkf.attendance.all']
         hr_attendance = self.env['hr.attendance']
         for info in self:
@@ -399,7 +399,7 @@ class BiometricDeviceDetails(models.Model):
 
     def action_download_attendance_all(self):
         """Function to download attendance records from the device"""
-        # if (self.lic_check()):
+
         zk_attendance = self.env['vitouzkf.attendance.all']
         #hr_attendance = self.env['hr.attendance']
         for info in self:
