@@ -123,7 +123,7 @@ class ZkMachineAttendance(models.Model):
     early_or_late_h = fields.Float(string='Early-Late Hrs', widget='float_time', default=0)
 
     status_vitouzk = fields.Selection(
-        related='employee_id.status_vitouzk', string='Staff Status', default='Active', store=True
+        related='employee_id.status_vitouzk', string='Staff Status',store=True
     )
 
 

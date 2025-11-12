@@ -20,7 +20,7 @@ class HsShifts(models.Model):
     shift_in = fields.Float(string="Shift Time-In" , default=0.0,  help='Shift In as float (e.g. 1.5 = 1h30)')
     shift_out = fields.Float(string="Shift Time-Out",  default=0.0,  help='Shift Out as float (e.g. 1.5 = 1h30)')
     active = fields.Boolean(string="Status", default=True)
-    work_hour = fields.Float(string='Work Hour', widget='float_time', compute='_compute_work_hour')
+    work_hour = fields.Float(string='Work Hour', widget='float_time')
     # rest_hours = fields.Float(string='Resting Hours',widget='float_time')
 
     state = fields.Selection(
@@ -43,10 +43,10 @@ class HsShifts(models.Model):
     undodone_staff = fields.Char(string='Undo Done Staff')
     undodone_date = fields.Char(string="Undo Done Date")
 
-    @api.depends('shift_in','shift_out')
+    @api.constrains('shift_in','shift_out')
     def _compute_work_hour(self):
         for rec in self:
-
+            work_hour = 0
             if rec.shift_in and rec.shift_out:
                 h_in = rec.shift_in
                 h_out = rec.shift_out
